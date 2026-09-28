@@ -149,6 +149,19 @@ footer nav{display:flex;gap:20px}
 footer a{color:var(--muted);text-decoration:none}
 footer a:hover{color:var(--text)}
 
+/* legal and support pages */
+.legal-page{min-height:calc(100vh - 150px);padding:72px 0 96px}
+.legal-copy{max-width:780px}
+.legal-copy h1{font-family:var(--font-display);font-size:clamp(34px,6vw,56px);line-height:1.05;margin-bottom:16px}
+.legal-copy h2{font-family:var(--font-display);font-size:24px;margin:40px 0 10px}
+.legal-copy p,.legal-copy li{color:var(--muted)}
+.legal-copy p+p{margin-top:12px}
+.legal-copy ul{margin:14px 0 0 22px}
+.legal-copy li+li{margin-top:8px}
+.legal-meta{font-family:var(--font-mono);font-size:12px;color:var(--dim);margin-bottom:32px}
+.legal-card{margin-top:28px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.legal-card a{overflow-wrap:anywhere}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}

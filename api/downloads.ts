@@ -21,7 +21,7 @@ export function sumDownloads(releases: Release[]): number {
 export default async function handler(): Promise<Response> {
   try {
     const res = await fetch(
-      'https://api.github.com/repos/luisroquette/notchagent/releases?per_page=10',
+      'https://api.github.com/repos/luisroquette-labs/notchagent/releases?per_page=10',
       { headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'notchagent-site' } },
     )
     if (!res.ok) throw new Error(`GitHub ${res.status}`)

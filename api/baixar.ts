@@ -18,7 +18,7 @@ export function escolherAsset(
   return achado ? achado.browser_download_url : null
 }
 
-const FALLBACK = 'https://github.com/luisroquette/notchagent/releases/latest'
+const FALLBACK = 'https://github.com/luisroquette-labs/notchagent/releases/latest'
 
 // Cache na CDN: o asset de uma release não muda, e a API anônima do GitHub
 // limita a 60 req/h por IP compartilhado. stale-while-revalidate segura o
@@ -36,7 +36,7 @@ export function redirectComCache(url: string): Response {
 export default async function handler(req: Request): Promise<Response> {
   const formato = new URL(req.url).searchParams.get('f') ?? 'dmg'
   try {
-    const res = await fetch('https://api.github.com/repos/luisroquette/notchagent/releases/latest', {
+    const res = await fetch('https://api.github.com/repos/luisroquette-labs/notchagent/releases/latest', {
       headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'notchagent-site' },
       signal: AbortSignal.timeout(8000),
     })

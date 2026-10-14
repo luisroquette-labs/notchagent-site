@@ -20,12 +20,13 @@
     <article class="wrap legal-copy">
       <p class="eyebrow">Privacidade</p>
       <h1>Política de Privacidade</h1>
-      <p class="legal-meta">NotchAgent para macOS · vigente em 28 de setembro de 2026</p>
+      <p class="legal-meta">NotchAgent para macOS · vigente em 14 de outubro de 2026</p>
 
       <p>O NotchAgent é um aplicativo local-first. Não exige conta e não envia ao desenvolvedor telemetria, conteúdo de sessões, credenciais ou métricas de uso do app.</p>
 
       <h2>Dados processados no Mac</h2>
-      <p>O app processa localmente preferências, histórico de uso, estimativas de custo, diagnósticos e arquivos das pastas que você selecionar. O acesso às pastas é somente leitura e usa as permissões protegidas do macOS. Credenciais configuradas ficam no Keychain.</p>
+      <p>O app processa localmente preferências, histórico de uso, estimativas de custo, diagnósticos e arquivos das pastas que você selecionar. O acesso salvo às pastas para monitoramento é somente leitura e usa as permissões protegidas do macOS. Credenciais configuradas ficam no Keychain.</p>
+      <p>Ao conectar Claude Code pelo guia, com sua escolha da pasta <code>.claude</code>, o NotchAgent edita uma vez <code>settings.json</code> para ativar a barra de status que exporta os percentuais oficiais de cota para <code>.notchagent-quota.json</code> na mesma pasta. As outras opções são preservadas; se você já usa outra barra, o app pede confirmação antes de substituí-la. O NotchAgent lê apenas esse arquivo de cota e não envia seu conteúdo ao desenvolvedor.</p>
 
       <h2>Conexões opcionais</h2>
       <p>Quando você ativa um recurso online, o app pode se conectar diretamente ao serviço correspondente:</p>
@@ -38,7 +39,7 @@
       <p>A edição da Mac App Store inicia o clima desligado, não envia avisos pelo serviço Resend e não executa o probe pago da Anthropic.</p>
 
       <h2>Retenção e exclusão</h2>
-      <p>O desenvolvedor não mantém uma cópia dos dados processados pelo aplicativo. Você pode revogar o acesso às pastas, remover contas nas configurações ou apagar os dados locais desinstalando o app e removendo seu contêiner no macOS.</p>
+      <p>O desenvolvedor não mantém uma cópia dos dados processados pelo aplicativo. Você pode revogar o acesso às pastas, remover contas nas configurações ou apagar os dados locais desinstalando o app e removendo seu contêiner no macOS. Revogar o acesso impede a leitura pelo NotchAgent, mas não apaga a configuração da barra de status do Claude Code nem o arquivo local de cota.</p>
 
       <h2>Serviços de terceiros</h2>
       <p>As solicitações opcionais são regidas também pelas políticas dos respectivos provedores. O NotchAgent é independente e não é afiliado à Anthropic nem à OpenAI.</p>

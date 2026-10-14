@@ -17,6 +17,8 @@ describe('páginas exigidas pela Mac App Store', () => {
     expect(privacy).toMatch(/Serviços de terceiros/)
     expect(privacy).toMatch(/Retenção e exclusão/)
     expect(privacy).toContain('lfrprojects.ai@gmail.com')
+    expect(privacy).toContain('settings.json')
+    expect(privacy).toContain('Revogar o acesso impede a leitura')
   })
 
   it('oferece contato humano identificável', () => {

@@ -3,22 +3,27 @@ import { describe, it, expect } from 'vitest'
 
 const js = readFileSync(new URL('../public/script.js', import.meta.url), 'utf8')
 
-// A5: querySelector('[data-download]') pegava só o botão do topbar —
-// os outros 6 CTAs de download nunca revelavam o formulário de captura.
-describe('REGRESSÃO A5: todo CTA de download revela o formulário', () => {
-  it('escuta todos os [data-download], não só o primeiro', () => {
-    expect(js).toMatch(/querySelectorAll\('\[data-download\]'\)/)
-    expect(js).not.toMatch(/document\.querySelector\('\[data-download\]'\)/)
+// Gate de lead (18/10/2026): nada abre sem antes colher o lead pelo formulário
+// do motor de forms da CF Gauss. Antes, querySelector('[data-download]') pegava
+// só o primeiro CTA; aqui garantimos que TODOS os CTAs são gateados.
+describe('CONTRATO: gate de lead no script', () => {
+  it('escuta todos os [data-gate], não só o primeiro', () => {
+    expect(js).toMatch(/querySelectorAll\('\[data-gate\]'\)/)
+    expect(js).not.toMatch(/document\.querySelector\('\[data-gate\]'\)/)
   })
 
-  it('ao revelar, leva o usuário até o formulário (scroll + foco)', () => {
-    expect(js).toMatch(/scrollIntoView/)
-    expect(js).toMatch(/email\.focus\(\)/)
+  it('só reage a mensagens do motor de forms da CF Gauss', () => {
+    expect(js).toContain("'https://cfgauss.com.br'")
+    expect(js).toContain("data.source !== 'cfgauss-embed-form'")
   })
 
-  it('confirma a escolha de comunicação sem mensagem enganosa', () => {
-    expect(js).toContain('marketingConsent')
-    expect(js).toContain('Avisaremos sobre versões e conteúdos da CF Gauss.')
-    expect(js).toContain('Avisamos só quando sair versão nova.')
+  it('no sucesso do form, navega o próprio tab (não window.open, que o Chrome bloqueia)', () => {
+    expect(js).toMatch(/window\.location\.assign\(pendingDest\)/)
+    expect(js).not.toMatch(/window\.open\(/)
+  })
+
+  it('não sobra o fluxo caseiro antigo (scroll/foco/subscribe)', () => {
+    expect(js).not.toContain('/api/subscribe')
+    expect(js).not.toMatch(/scrollIntoView/)
   })
 })

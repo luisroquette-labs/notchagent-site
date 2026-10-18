@@ -58,10 +58,25 @@ describe('CTAs do site', () => {
     expect([...new Set(usados)].filter((s) => !CONHECIDOS.has(s))).toEqual([])
   })
 
-  it('o CTA principal de download aponta para a Mac App Store', () => {
-    const primeiro = html.match(/<a[^>]*data-download[^>]*href="([^"]+)"/i)?.[1]
-      ?? html.match(/<a[^>]*href="([^"]+)"[^>]*data-download/i)?.[1]
+  it('o CTA principal de download é um gate que leva à Mac App Store', () => {
+    // Todo download passa pelo formulário do motor de forms da CF Gauss
+    // (botão data-gate) antes de abrir; o destino fica em data-dest.
+    const primeiro = html.match(/<button[^>]*data-gate[^>]*data-dest="([^"]+)"/i)?.[1]
+      ?? html.match(/<button[^>]*data-dest="([^"]+)"[^>]*data-gate/i)?.[1]
     expect(primeiro).toBe('https://apps.apple.com/br/app/notchagent/id6817046228?mt=12')
+  })
+
+  it('nenhum link direto abre a App Store sem antes colher o lead', () => {
+    // Regra do dono: nada abre (App Store/download) sem o formulário antes.
+    // A App Store só pode aparecer como destino de um gate (data-dest), nunca
+    // como href de um <a> que abriria a loja direto.
+    expect(html).not.toMatch(/<a\b[^>]*href="https:\/\/apps\.apple\.com/i)
+    expect(html).toMatch(/data-gate[^>]*data-dest="https:\/\/apps\.apple\.com/i)
+  })
+
+  it('o download passa pelo formulário do motor de forms da CF Gauss', () => {
+    // O gate e o #subscribe embarcam o form da CF Gauss (cfgauss.com.br/embed/f/).
+    expect(html).toMatch(/cfgauss\.com\.br\/embed\/f\/[0-9a-f-]+/i)
   })
 
   it('o app oficial da App Store é endossado como seguro na página', () => {

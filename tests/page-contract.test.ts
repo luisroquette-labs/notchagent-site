@@ -18,11 +18,12 @@ describe('CONTRATO: página de download', () => {
     expect(html).not.toMatch(/notchagent-personal/)
   })
 
-  it('o botão principal leva à Mac App Store oficial', () => {
-    // O canal público de download virou a Mac App Store (app oficial, revisado
-    // pela Apple). O que não pode faltar é o CTA apontando para o app oficial.
-    const appstore = html.match(/href="(https:\/\/apps\.apple\.com\/br\/app\/notchagent\/id6817046228[^"]*)"/)
-    expect(appstore, 'nenhum CTA de download na Mac App Store').not.toBeNull()
+  it('o botão principal leva à Mac App Store oficial (via gate de lead)', () => {
+    // O canal público de download é a Mac App Store (app oficial, revisado pela
+    // Apple), mas sempre atrás do formulário de lead: a URL da loja é o destino
+    // de um gate (data-dest), nunca um href direto.
+    const appstore = html.match(/data-dest="(https:\/\/apps\.apple\.com\/br\/app\/notchagent\/id6817046228[^"]*)"/)
+    expect(appstore, 'nenhum gate de download na Mac App Store').not.toBeNull()
   })
 
   it('declara os requisitos de sistema antes do clique', () => {
@@ -34,20 +35,20 @@ describe('CONTRATO: página de download', () => {
     expect(html).not.toMatch(/notchagent\.app\/appcast/)
   })
 
-  it('o botão de download não depende do formulário', () => {
-    const btn = html.indexOf('data-download')
-    const form = html.indexOf('id="subscribe"')
-    expect(btn, 'botão de download ausente').toBeGreaterThan(-1)
-    if (form > -1) {
-      expect(btn, 'download aparece depois do formulário').toBeLessThan(form)
-    }
+  it('todo download passa por um gate de formulário antes de abrir', () => {
+    // Regra do dono (18/10/2026): nada abre sem antes colher o lead. Os CTAs
+    // de download são botões data-gate (não <a> direto), e existe o modal #gate
+    // que embarca o formulário do motor de forms da CF Gauss.
+    expect(html, 'nenhum botão data-gate de download').toMatch(/data-gate\b/)
+    expect(html, 'modal de gate ausente').toMatch(/id="gate"/)
+    expect(html, 'gate não embarca o form da CF Gauss').toMatch(/id="gate-iframe"[^>]*data-src="https:\/\/cfgauss\.com\.br\/embed\/f\//)
   })
 
-  it('separa release notes de consentimento opcional de marketing', () => {
-    expect(html).toContain('Sem newsletter, sem marketing — só release notes.')
-    expect(html).toContain('id="marketing-consent"')
-    expect(html).toContain('type="checkbox"')
-    expect(html).toContain('Posso cancelar a qualquer momento.')
+  it('os formulários da página são do motor de forms da CF Gauss', () => {
+    // O #subscribe deixou de ser form caseiro (/api/subscribe) e virou o form
+    // embarcado da CF Gauss; não sobra nenhum <form> caseiro na página.
+    expect(html).toMatch(/id="subscribe-iframe"[^>]*src="https:\/\/cfgauss\.com\.br\/embed\/f\//)
+    expect(html).not.toContain('id="subscribe-form"')
   })
 
   it('o contador de downloads não inventa número no HTML', () => {

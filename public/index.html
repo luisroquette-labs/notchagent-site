@@ -28,7 +28,8 @@
   "operatingSystem": "macOS 14+",
   "applicationCategory": "DeveloperApplication",
   "url": "https://notchagent.app/",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "downloadUrl": "https://apps.apple.com/br/app/notchagent/id6817046228",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
 }
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBME8D3TJP"></script>
@@ -41,6 +42,17 @@ gtag('config', 'G-VBME8D3TJP');
 </head>
 <body>
 
+<!-- Badge oficial reutilizável da Mac App Store (logo Apple + lockup pt-BR) -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="appstore-badge-sym" viewBox="0 0 160 52">
+    <rect x="1" y="1" width="158" height="50" rx="11" fill="#000"></rect>
+    <rect x="1.5" y="1.5" width="157" height="49" rx="10.5" fill="none" stroke="#A6A6A6" stroke-width="1"></rect>
+    <path fill="#fff" transform="translate(16,14)" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.044.28.044.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"></path>
+    <text x="46" y="21" fill="#fff" font-family="'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="9" letter-spacing=".3">Baixar na</text>
+    <text x="45" y="40" fill="#fff" font-family="'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16.5" font-weight="600">Mac App Store</text>
+  </symbol>
+</svg>
+
 <div class="fuel" aria-hidden="true">
   <span class="fuel-label">Leitura</span>
   <span class="segments" id="fuelSegs"></span>
@@ -49,8 +61,10 @@ gtag('config', 'G-VBME8D3TJP');
 
 <header class="topbar">
   <div class="wrap">
-    <div class="brand"><img src="/img/wordmark-branco.png" alt="NotchAgent" class="brand-word"><span class="fw">v3.5.4</span></div>
-    <a class="buy" data-download href="https://cfgauss.com.br/t/notchagent-download-dmg">Baixar grátis</a>
+    <div class="brand"><img src="/img/wordmark-branco.png" alt="NotchAgent" class="brand-word"><span class="fw">Mac App Store</span></div>
+    <a class="appstore-cta sm" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+      <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
+    </a>
   </div>
 </header>
 
@@ -66,11 +80,13 @@ gtag('config', 'G-VBME8D3TJP');
       <h1>O medidor de cota dos seus agentes de IA. <em>Exatamente onde você olha.</em></h1>
       <p class="sub">Para quem confere a cota pelo terminal: o que resta da janela, em tempo real, no notch do seu Mac.</p>
       <div class="ctas">
-        <a class="cta primary" data-download href="https://cfgauss.com.br/t/notchagent-download-dmg">Baixar grátis</a>
+        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+          <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
+        </a>
         <a class="cta ghost" href="https://cfgauss.com.br/t/notchagent-github">Ver no GitHub</a>
       </div>
       <div class="specstrip" aria-label="Especificações rápidas">
-        <span>Swift 6</span><span>Zero Electron</span><span>Local-first</span><span>Grátis</span>
+        <span>App oficial da Apple</span><span>Swift 6</span><span>Local-first</span><span>Grátis</span>
       </div>
     </div>
   </section>
@@ -117,7 +133,9 @@ gtag('config', 'G-VBME8D3TJP');
         </div>
       </div>
       <div class="ctas mid">
-        <a class="cta primary" data-download href="https://cfgauss.com.br/t/notchagent-download-dmg">Baixar grátis</a>
+        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+          <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
+        </a>
         <a class="cta ghost" href="#baixar">Como instalar</a>
       </div>
     </div>
@@ -141,25 +159,25 @@ gtag('config', 'G-VBME8D3TJP');
   <section class="baixar reveal" id="baixar">
     <div class="wrap">
       <p class="eyebrow">Baixar</p>
-      <h2>Grátis. Sem conta. Sem telemetria.</h2>
-      <div class="dl-grid">
+      <h2>Grátis. Oficial. Direto da Mac App Store.</h2>
+      <p class="lede center">Revisado e aprovado pela Apple. Instala em um clique, atualiza sozinho e nunca dispara o aviso de "app de desenvolvedor não identificado" — porque é um app oficial da App Store.</p>
+      <div class="store">
+        <a class="appstore-cta big" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+          <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
+        </a>
+        <ul class="store-why">
+          <li><b>Revisado pela Apple.</b> Passou pela App Review antes de entrar na loja — é a versão que a Apple aprovou.</li>
+          <li><b>Seguro por padrão.</b> Roda no sandbox do macOS, sem aviso do Gatekeeper e sem Terminal.</li>
+          <li><b>Sempre atualizado.</b> Cada versão nova chega sozinha pela própria App Store.</li>
+        </ul>
+      </div>
+
+      <div class="dl-grid two">
         <div class="dl">
-          <p class="page">RECOMENDADO</p>
-          <h3>DMG notarizado</h3>
-          <p>Versão 3.5.4 com ticket notarizado da Apple — o caminho sem Terminal.</p>
-          <a class="cta primary" data-download href="https://cfgauss.com.br/t/notchagent-download-dmg">Baixar DMG</a>
-        </div>
-        <div class="dl">
-          <p class="page">ZIP ASSINADO</p>
-          <h3>Só o app, num ZIP</h3>
-          <p>Descompacte e arraste o NotchAgent para Aplicativos.</p>
-          <a class="cta ghost" data-download href="https://cfgauss.com.br/t/notchagent-download-zip">Baixar ZIP</a>
-        </div>
-        <div class="dl">
-          <p class="page">HOMEBREW</p>
-          <h3>Preferem o terminal?</h3>
-          <p class="mono">brew install --cask luisroquette/tap/notchagent</p>
-          <a class="cta ghost" href="https://cfgauss.com.br/t/notchagent-install">Instruções</a>
+          <p class="page">CÓDIGO ABERTO</p>
+          <h3>Prefere auditar o código?</h3>
+          <p>Tudo que roda no seu Mac está público. Leia cada linha, audite e, se quiser, compile você mesmo.</p>
+          <a class="cta ghost" href="https://cfgauss.com.br/t/notchagent-github">Ver no GitHub</a>
         </div>
         <div class="dl">
           <p class="page">WINDOWS · PREVIEW</p>
@@ -168,8 +186,8 @@ gtag('config', 'G-VBME8D3TJP');
           <a class="cta ghost" data-download href="https://cfgauss.com.br/t/notchagent-download-windows">Baixar .exe (preview)</a>
         </div>
       </div>
-      <p class="req">macOS 14+ · Apple Silicon · Swift 6 · grátis e open source — Windows 10/11 em preview não assinado</p>
-      <p class="dl-count">Total de downloads: <span id="dl-count">—</span></p>
+      <p class="req">macOS 14+ · Apple Silicon · grátis na Mac App Store — Windows 10/11 em preview não assinado</p>
+      <p class="dl-count">Downloads até agora: <span id="dl-count">—</span></p>
     </div>
   </section>
 
@@ -224,7 +242,9 @@ gtag('config', 'G-VBME8D3TJP');
         </figure>
       </div>
       <div class="ctas mid">
-        <a class="cta primary" data-download href="https://cfgauss.com.br/t/notchagent-download-dmg">Quero isso no meu Mac</a>
+        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+          <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -239,11 +259,13 @@ gtag('config', 'G-VBME8D3TJP');
         <tr><th>Fontes</th><td>Transcripts locais do Claude Code · rollouts do Codex · arquivos de sessão no disco</td></tr>
         <tr><th>Credenciais</th><td>Keychain do macOS · perfis WebKit isolados por conta</td></tr>
         <tr><th>Rede</th><td>Nenhuma telemetria · probe opcional de 1 token para a API da Anthropic</td></tr>
-        <tr><th>Distribuição</th><td>DMG notarizado · ZIP assinado · Homebrew</td></tr>
+        <tr><th>Distribuição</th><td>Mac App Store · revisado e aprovado pela Apple</td></tr>
         <tr><th>Preço</th><td>Grátis · código aberto</td></tr>
       </table>
       <div class="ctas mid">
-        <a class="cta primary" data-download href="https://cfgauss.com.br/t/notchagent-download-dmg">Baixar grátis</a>
+        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+          <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -252,9 +274,11 @@ gtag('config', 'G-VBME8D3TJP');
     <div class="wrap">
       <p class="eyebrow">Baixe agora</p>
       <h2>Pare de descobrir o limite pelo erro.</h2>
-      <p class="price">Grátis · macOS 14+ · Apple Silicon · sem conta</p>
+      <p class="price">Grátis · oficial na Mac App Store · macOS 14+ · Apple Silicon</p>
       <div class="ctas">
-        <a class="cta primary" data-download href="https://cfgauss.com.br/t/notchagent-download-dmg">Baixar grátis</a>
+        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+          <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
+        </a>
         <a class="cta ghost" href="https://cfgauss.com.br/t/notchagent-github">Explorar o código no GitHub</a>
       </div>
     </div>

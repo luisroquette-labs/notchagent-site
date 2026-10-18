@@ -107,6 +107,19 @@ section .lede{color:var(--muted);max-width:640px;font-size:17px}
 .dl .mono{font-family:var(--font-mono);font-size:12px;color:var(--text);background:var(--raised);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
 .dl .cta{text-align:center}
 .req{margin-top:26px;font-family:var(--font-mono);font-size:13px;color:var(--dim);text-align:center}
+/* Badge oficial da Mac App Store */
+.appstore-cta{display:inline-flex;line-height:0;text-decoration:none;border-radius:11px}
+.appstore-cta:focus-visible{outline:2px solid var(--coral);outline-offset:3px}
+.appstore-badge{height:54px;width:auto;display:block;transition:transform .15s ease,filter .15s ease}
+.appstore-cta:hover .appstore-badge{transform:translateY(-1px);filter:brightness(1.12)}
+.appstore-cta.sm .appstore-badge{height:38px}
+.appstore-cta.big .appstore-badge{height:62px}
+.lede.center{text-align:center;max-width:60ch;margin-left:auto;margin-right:auto}
+.store{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:34px}
+.store-why{list-style:none;margin:0;padding:0;display:grid;gap:12px;max-width:460px;text-align:left}
+.store-why li{color:var(--muted);font-size:14px;line-height:1.5}
+.store-why b{color:var(--text)}
+.dl-grid.two{grid-template-columns:repeat(2,1fr);margin-top:48px}
 
 /* subscribe */
 #subscribe{background:var(--panel);text-align:center}
@@ -156,7 +169,8 @@ footer a:hover{color:var(--text)}
 @media (max-width:820px){
   section{padding:64px 0}
   .problema .split{grid-template-columns:1fr}
-  .pillar-grid,.steps,.dl-grid,.priv ul,.film-grid{grid-template-columns:1fr}
+  .pillar-grid,.steps,.dl-grid,.dl-grid.two,.priv ul,.film-grid{grid-template-columns:1fr}
+  .store{gap:24px}
   .hero .copy{padding-bottom:36px}
   .fuel{right:12px;bottom:12px}
 }

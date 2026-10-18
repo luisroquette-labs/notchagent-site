@@ -18,12 +18,11 @@ describe('CONTRATO: página de download', () => {
     expect(html).not.toMatch(/notchagent-personal/)
   })
 
-  it('o botão principal baixa um DMG (release do GitHub ou tracklink futuro)', () => {
-    // Aceita os dois destinos: o direto de hoje e o /t/... do tracklink;
-    // o que não pode faltar é o CTA de download do binário DMG.
-    const direto = html.match(/href="(https:\/\/github\.com\/luisroquette\/notchagent\/releases\/download\/[^"]+\.dmg)"/)
-    const tracklink = html.match(/href="(https:\/\/cfgauss\.com\.br\/t\/notchagent-download-dmg)"/)
-    expect(direto ?? tracklink, 'nenhum CTA de download de DMG (direto ou tracklink)').not.toBeNull()
+  it('o botão principal leva à Mac App Store oficial', () => {
+    // O canal público de download virou a Mac App Store (app oficial, revisado
+    // pela Apple). O que não pode faltar é o CTA apontando para o app oficial.
+    const appstore = html.match(/href="(https:\/\/apps\.apple\.com\/br\/app\/notchagent\/id6817046228[^"]*)"/)
+    expect(appstore, 'nenhum CTA de download na Mac App Store').not.toBeNull()
   })
 
   it('declara os requisitos de sistema antes do clique', () => {

@@ -9,6 +9,7 @@ const PERMITIDOS = [
   'https://fonts.gstatic.com',
   'https://www.googletagmanager.com',
   'https://notchagent.app/',
+  'https://apps.apple.com/',
   'https://schema.org',
 ]
 
@@ -57,10 +58,16 @@ describe('CTAs do site', () => {
     expect([...new Set(usados)].filter((s) => !CONHECIDOS.has(s))).toEqual([])
   })
 
-  it('o CTA principal de download aponta para o slug do dmg', () => {
+  it('o CTA principal de download aponta para a Mac App Store', () => {
     const primeiro = html.match(/<a[^>]*data-download[^>]*href="([^"]+)"/i)?.[1]
       ?? html.match(/<a[^>]*href="([^"]+)"[^>]*data-download/i)?.[1]
-    expect(primeiro).toBe('https://cfgauss.com.br/t/notchagent-download-dmg')
+    expect(primeiro).toBe('https://apps.apple.com/br/app/notchagent/id6817046228?mt=12')
+  })
+
+  it('o app oficial da App Store é endossado como seguro na página', () => {
+    expect(html).toMatch(/apps\.apple\.com\/br\/app\/notchagent\/id6817046228/)
+    expect(html).toMatch(/Mac App Store/)
+    expect(html).toMatch(/aprovad[oa] pela Apple/i)
   })
 
   it('a secao de captura nao esta oculta', () => {

@@ -62,9 +62,9 @@ gtag('config', 'G-VBME8D3TJP');
 <header class="topbar">
   <div class="wrap">
     <div class="brand"><img src="/img/wordmark-branco.png" alt="NotchAgent" class="brand-word"><span class="fw">Mac App Store</span></div>
-    <a class="appstore-cta sm" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+    <button type="button" class="appstore-cta sm" data-gate data-dest="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store (abre o formulário rápido primeiro)">
       <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
-    </a>
+    </button>
   </div>
 </header>
 
@@ -80,9 +80,9 @@ gtag('config', 'G-VBME8D3TJP');
       <h1>O medidor de cota dos seus agentes de IA. <em>Exatamente onde você olha.</em></h1>
       <p class="sub">Para quem confere a cota pelo terminal: o que resta da janela, em tempo real, no notch do seu Mac.</p>
       <div class="ctas">
-        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+        <button type="button" class="appstore-cta" data-gate data-dest="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store (abre o formulário rápido primeiro)">
           <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
-        </a>
+        </button>
         <a class="cta ghost" href="https://cfgauss.com.br/t/notchagent-github">Ver no GitHub</a>
       </div>
       <div class="specstrip" aria-label="Especificações rápidas">
@@ -133,9 +133,9 @@ gtag('config', 'G-VBME8D3TJP');
         </div>
       </div>
       <div class="ctas mid">
-        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+        <button type="button" class="appstore-cta" data-gate data-dest="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store (abre o formulário rápido primeiro)">
           <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
-        </a>
+        </button>
         <a class="cta ghost" href="#baixar">Como instalar</a>
       </div>
     </div>
@@ -162,9 +162,9 @@ gtag('config', 'G-VBME8D3TJP');
       <h2>Grátis. Oficial. Direto da Mac App Store.</h2>
       <p class="lede center">Revisado e aprovado pela Apple. Instala em um clique, atualiza sozinho e nunca dispara o aviso de "app de desenvolvedor não identificado" — porque é um app oficial da App Store.</p>
       <div class="store">
-        <a class="appstore-cta big" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+        <button type="button" class="appstore-cta big" data-gate data-dest="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store (abre o formulário rápido primeiro)">
           <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
-        </a>
+        </button>
         <ul class="store-why">
           <li><b>Revisado pela Apple.</b> Passou pela App Review antes de entrar na loja — é a versão que a Apple aprovou.</li>
           <li><b>Seguro por padrão.</b> Roda no sandbox do macOS, sem aviso do Gatekeeper e sem Terminal.</li>
@@ -183,7 +183,7 @@ gtag('config', 'G-VBME8D3TJP');
           <p class="page">WINDOWS · PREVIEW</p>
           <h3>Ainda sem assinatura</h3>
           <p>Build de teste .NET 8 + Avalonia — não assinado (o SmartScreen vai avisar) e ainda não validado em hardware Windows real. Pra quem quer testar, não pra uso do dia a dia.</p>
-          <a class="cta ghost" data-download href="https://cfgauss.com.br/t/notchagent-download-windows">Baixar .exe (preview)</a>
+          <button type="button" class="cta ghost" data-gate data-dest="https://cfgauss.com.br/t/notchagent-download-windows">Baixar .exe (preview)</button>
         </div>
       </div>
       <p class="req">macOS 14+ · Apple Silicon · grátis na Mac App Store — Windows 10/11 em preview não assinado</p>
@@ -193,18 +193,17 @@ gtag('config', 'G-VBME8D3TJP');
 
   <section id="subscribe">
     <div class="wrap">
-      <h2>Baixando. Uma coisa antes de você ir.</h2>
-      <p class="lede">Quer um e-mail quando sair versão nova? Sem newsletter, sem marketing — só release notes.</p>
-      <form id="subscribe-form">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required placeholder="voce@exemplo.com" autocomplete="email" />
-        <label class="marketing-consent" for="marketing-consent">
-          <input id="marketing-consent" name="marketing-consent" type="checkbox" />
-          <span>Aceito receber conteúdos e ofertas por e-mail da CF Gauss. Posso cancelar a qualquer momento.</span>
-        </label>
-        <button type="submit">Me avise</button>
-      </form>
-      <p id="subscribe-status" role="status"></p>
+      <p class="eyebrow">Fale com a gente</p>
+      <h2>Quer avisos quando sair versão nova?</h2>
+      <p class="lede">Deixe seu contato no formulário da CF Gauss — sem newsletter, sem spam. É o mesmo formulário rápido que aparece antes do download.</p>
+      <div class="embed-form-wrap">
+        <iframe
+          id="subscribe-iframe"
+          class="cfgauss-form"
+          title="Formulário de contato da CF Gauss"
+          src="https://cfgauss.com.br/embed/f/ce7b3221-bb79-4737-9863-e1e3a9d690ba"
+          loading="lazy"></iframe>
+      </div>
     </div>
   </section>
 
@@ -242,9 +241,9 @@ gtag('config', 'G-VBME8D3TJP');
         </figure>
       </div>
       <div class="ctas mid">
-        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+        <button type="button" class="appstore-cta" data-gate data-dest="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store (abre o formulário rápido primeiro)">
           <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -263,9 +262,9 @@ gtag('config', 'G-VBME8D3TJP');
         <tr><th>Preço</th><td>Grátis · código aberto</td></tr>
       </table>
       <div class="ctas mid">
-        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+        <button type="button" class="appstore-cta" data-gate data-dest="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store (abre o formulário rápido primeiro)">
           <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -276,14 +275,27 @@ gtag('config', 'G-VBME8D3TJP');
       <h2>Pare de descobrir o limite pelo erro.</h2>
       <p class="price">Grátis · oficial na Mac App Store · macOS 14+ · Apple Silicon</p>
       <div class="ctas">
-        <a class="appstore-cta" data-download target="_blank" rel="noopener" href="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store">
+        <button type="button" class="appstore-cta" data-gate data-dest="https://apps.apple.com/br/app/notchagent/id6817046228?mt=12" aria-label="Baixar o NotchAgent na Mac App Store (abre o formulário rápido primeiro)">
           <svg class="appstore-badge" viewBox="0 0 160 52" role="img" aria-label="Baixar na Mac App Store"><use href="#appstore-badge-sym"></use></svg>
-        </a>
+        </button>
         <a class="cta ghost" href="https://cfgauss.com.br/t/notchagent-github">Explorar o código no GitHub</a>
       </div>
     </div>
   </section>
 </main>
+
+<!-- Gate de lead: TODO download/App Store passa pelo formulário do motor de
+     forms da CF Gauss antes de abrir. O iframe só carrega quando o modal abre;
+     no sucesso (postMessage cfgauss-embed-form) navegamos pro destino. -->
+<div id="gate" class="gate" hidden>
+  <div class="gate-backdrop" data-gate-close></div>
+  <div class="gate-card" role="dialog" aria-modal="true" aria-label="Baixar o NotchAgent">
+    <button type="button" class="gate-x" data-gate-close aria-label="Fechar">✕</button>
+    <p class="gate-title">Falta só um passo pra baixar</p>
+    <p class="gate-sub">Deixe seu contato e o download abre em seguida.</p>
+    <iframe id="gate-iframe" class="cfgauss-form" title="Formulário rápido da CF Gauss" data-src="https://cfgauss.com.br/embed/f/ce7b3221-bb79-4737-9863-e1e3a9d690ba"></iframe>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">

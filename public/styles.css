@@ -120,6 +120,22 @@ section .lede{color:var(--muted);max-width:640px;font-size:17px}
 .store-why li{color:var(--muted);font-size:14px;line-height:1.5}
 .store-why b{color:var(--text)}
 .dl-grid.two{grid-template-columns:repeat(2,1fr);margin-top:48px}
+/* CTAs que viraram <button> (gate de lead): zerar o chrome do botão */
+button.appstore-cta{background:none;border:none;padding:0;font:inherit}
+button.appstore-cta,button.cta{cursor:pointer}
+button.cta{font:inherit}
+/* Formulário embarcado do motor de forms da CF Gauss (inline + modal) */
+.embed-form-wrap{margin-top:28px;max-width:440px}
+.cfgauss-form{width:100%;border:none;display:block;min-height:440px;background:transparent}
+/* Gate: modal que embarca o form da CF Gauss antes de abrir o download */
+.gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.gate[hidden]{display:none}
+.gate-backdrop{position:absolute;inset:0;background:rgba(10,8,14,.72);backdrop-filter:blur(4px)}
+.gate-card{position:relative;z-index:1;width:100%;max-width:440px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 24px 18px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.gate-x{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--muted);font-size:16px;line-height:1;cursor:pointer}
+.gate-x:hover{color:var(--text)}
+.gate-title{font-family:var(--font-display);font-weight:700;font-size:20px;margin-bottom:6px}
+.gate-sub{color:var(--muted);font-size:14px;margin-bottom:16px}
 
 /* subscribe */
 #subscribe{background:var(--panel);text-align:center}

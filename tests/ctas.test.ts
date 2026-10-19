@@ -79,6 +79,14 @@ describe('CTAs do site', () => {
     expect(html).toMatch(/cfgauss\.com\.br\/embed\/f\/[0-9a-f-]+/i)
   })
 
+  it('até os links de código/GitHub passam pelo gate (nenhum <a> abre direto)', () => {
+    // Regra do dono: nada abre sem lead — inclusive os links de código-fonte.
+    // Nenhum <a href> aponta pra um tracklink /t/ (GitHub/changelog/releases);
+    // todos viraram data-gate com o destino em data-dest.
+    expect(html).not.toMatch(/<a\b[^>]*href="https:\/\/cfgauss\.com\.br\/t\//i)
+    expect(html).toMatch(/data-gate[^>]*data-dest="https:\/\/cfgauss\.com\.br\/t\/notchagent-github"/i)
+  })
+
   it('o app oficial da App Store é endossado como seguro na página', () => {
     expect(html).toMatch(/apps\.apple\.com\/br\/app\/notchagent\/id6817046228/)
     expect(html).toMatch(/Mac App Store/)

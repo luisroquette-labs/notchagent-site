@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NotchAgent — Fuel gauge for Claude Code and Codex, in your Mac's notch</title>
+<meta name="description" content="NotchAgent turns the MacBook notch into a fuel gauge for Claude Code and Codex: percent left, a burn projection, and alerts at 25/15/10/5%. Local-first, no account, no telemetry. Free on the Mac App Store, Homebrew, and GitHub.">
+<link rel="canonical" href="https://notchagent.app/producthunt">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NotchAgent — Fuel gauge for Claude Code and Codex, in your Mac's notch">
+<meta property="og:description" content="Percent left in the 5-hour and weekly windows, a burn projection, and alerts that escalate at 25/15/10/5%. Native Swift. Local-first. No account. No telemetry.">
+<meta property="og:url" content="https://notchagent.app/producthunt">
+<meta property="og:image" content="https://notchagent.app/img/notch-compact.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NotchAgent — Fuel gauge for Claude Code and Codex, in your Mac's notch">
+<meta name="twitter:description" content="How much Claude Code and Codex is left, live in your Mac's notch. Free. No account. No telemetry.">
+<meta name="twitter:image" content="https://notchagent.app/img/notch-compact.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal{opacity:1;transform:none}.fuel{display:none}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "NotchAgent",
+  "description": "Fuel gauge for Claude Code and Codex, in your Mac's notch. Native Swift, local-first, no account, no telemetry.",
+  "operatingSystem": "macOS 14+",
+  "applicationCategory": "DeveloperApplication",
+  "url": "https://notchagent.app/producthunt",
+  "downloadUrl": "https://apps.apple.com/us/app/notchagent/id6817046228",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+}
+</script>
+</head>
+<body>
+
+<div class="ph-banner">
+  <div class="wrap">
+    <p><strong>Welcome, Product Hunt.</strong> You are in the right place. Download is on this page — no form, no account, no email.</p>
+    <a href="#download">Jump to download</a>
+  </div>
+</div>
+
+<div class="fuel" aria-hidden="true">
+  <span class="fuel-label">Left</span>
+  <span class="segments" id="fuelSegs"></span>
+  <span class="fuel-pct" id="fuelPct">0%</span>
+</div>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="dot" aria-hidden="true"></span><strong>NotchAgent</strong><span class="fw">Free · Mac</span></div>
+    <a class="buy" href="https://apps.apple.com/us/app/notchagent/id6817046228">Mac App Store</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero ph" id="top">
+    <div class="wrap">
+      <p class="eyebrow">Claude Code and Codex</p>
+      <h1>Fuel gauge for Claude Code and Codex, in your Mac's notch</h1>
+      <p class="sub">Percent left in the 5-hour and weekly windows, a burn projection (“runs out 16:40”), and alerts that escalate at 25, 15, 10, and 5%. Native Swift. Local-first. No account. No telemetry.</p>
+      <div class="ctas">
+        <a class="cta primary" href="https://apps.apple.com/us/app/notchagent/id6817046228">Download on the Mac App Store</a>
+        <a class="cta ghost" href="https://github.com/luisroquette-labs/notchagent/releases/download/v3.7.1/NotchAgent-3.7.1.dmg">Download the 3.7.1 DMG</a>
+      </div>
+      <pre class="brew"><code>brew install --cask --no-quarantine luisroquette-labs/tap/notchagent</code></pre>
+      <p class="affiliate">Homebrew 3.7.1. On some Homebrew versions, run <code>brew trust --cask luisroquette-labs/tap/notchagent</code> first.</p>
+      <div class="specstrip" aria-label="Quick facts">
+        <span>Free</span><span>macOS 14+</span><span>Swift 6</span><span>Local-first</span><span>No account</span>
+      </div>
+      <p class="affiliate">Not affiliated with Anthropic or OpenAI.</p>
+    </div>
+  </section>
+
+  <section class="problema reveal">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">The notch</p>
+        <h2>The number you already look up, where your eyes already are.</h2>
+        <p class="lede">Claude on the left wing, Codex on the right. The percent left is colored by state, and the micro-gauge drains like a fuel tank. Hover to expand. Click to pin. Side-scroll the trackpad to change pages. Esc closes.</p>
+      </div>
+      <div class="gif-frame">
+        <img src="../img/notch-compact.png" alt="Compact notch bar: Claude on the left wing, Codex on the right, each with percent left" width="1200" height="80">
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars reveal">
+    <div class="wrap">
+      <p class="eyebrow">What it shows</p>
+      <h2>One glance. The questions that used to wait for an error.</h2>
+      <div class="pillar-grid">
+        <div class="pillar">
+          <p class="page">Now</p>
+          <h3>What is left</h3>
+          <p>Per-provider cards with a fixed layout: the 5-hour window always above the weekly window. Percent, segmented gauge, reset time, and a live countdown.</p>
+          <img src="../img/notch-panel.gif" alt="The notch panel expanding over the menu bar" loading="lazy">
+        </div>
+        <div class="pillar">
+          <p class="page">Burn</p>
+          <h3>Will it last?</h3>
+          <p>Actual usage plus a dotted projection at the current pace, with a verdict such as “runs out 16:40”. An exhausted window says nothing can burn. It never claims you are safe until reset.</p>
+          <img src="../img/burn-5h-exhausted.png" alt="Burn page with an exhausted 5-hour window" loading="lazy">
+        </div>
+        <div class="pillar">
+          <p class="page">Rhythm</p>
+          <h3>When you burn</h3>
+          <p>Twenty-four bars by local hour, today or the last 7 days, with the current hour highlighted.</p>
+          <img src="../img/rhythm.png" alt="Rhythm page with hourly bars" loading="lazy">
+        </div>
+        <div class="pillar">
+          <p class="page">Models</p>
+          <h3>Which model is healthy</h3>
+          <p>Claude family and OpenAI models, with a live probe and per-model usage read from your own transcripts.</p>
+          <img src="../img/claude-models.png" alt="Models page with a live probe status" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="como reveal">
+    <div class="wrap">
+      <p class="eyebrow">Alerts and API spend</p>
+      <h2>It taps you before the window hits zero.</h2>
+      <div class="steps">
+        <div class="step"><p class="n">25 / 15 / 10 / 5%</p><h3>Escalating alerts</h3><p>An animated notch takeover that gets more severe as the window runs out, plus a matching system notification. One trigger per threshold per window, re-armed on reset.</p></div>
+        <div class="step"><p class="n">10 providers</p><h3>API spend and balance</h3><p>Spend, balance, and plan stay separate across Anthropic, OpenAI, DeepSeek, OpenRouter, Google, xAI, ElevenLabs, Firecrawl, twitterapi.io, and X. Every number shows its source.</p></div>
+        <div class="step"><p class="n">On device</p><h3>The source of the number</h3><p>Claude percentages come from Anthropic’s rate-limit headers. Codex percentages come from OpenAI’s authenticated local app server. Missing windows are not invented.</p></div>
+      </div>
+      <div class="video-frame">
+        <img src="../img/alert-almost-empty.png" alt="Low-fuel alert: 4 percent left on the 5-hour window, almost empty" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="baixar reveal" id="download">
+    <div class="wrap">
+      <p class="eyebrow">Download</p>
+      <h2>Free. Direct. No form before the file.</h2>
+      <p class="lede">Three ways onto the Mac. The App Store build is sandboxed and updated by Apple. The Homebrew cask and the GitHub Release are the notarized direct download.</p>
+      <div class="dl-grid">
+        <div class="dl">
+          <p class="page">Mac App Store</p>
+          <h3>US storefront</h3>
+          <p>Reviewed by Apple. One click, no Terminal, updates from the App Store.</p>
+          <a class="cta primary" href="https://apps.apple.com/us/app/notchagent/id6817046228">Download on the Mac App Store</a>
+        </div>
+        <div class="dl">
+          <p class="page">GitHub Releases</p>
+          <h3>Notarized direct download</h3>
+          <p>Developer ID signed disk image for 3.7.1. Gatekeeper accepts the stapled ticket.</p>
+          <a class="cta ghost" href="https://github.com/luisroquette-labs/notchagent/releases/download/v3.7.1/NotchAgent-3.7.1.dmg">Download NotchAgent-3.7.1.dmg</a>
+        </div>
+        <div class="dl">
+          <p class="page">Homebrew</p>
+          <h3>Cask 3.7.1</h3>
+          <p>The tap serves 3.7.1. On some Homebrew versions, trust the cask before installing.</p>
+          <pre class="mono">brew trust --cask luisroquette-labs/tap/notchagent
+brew install --cask --no-quarantine luisroquette-labs/tap/notchagent</pre>
+        </div>
+        <div class="dl">
+          <p class="page">Source</p>
+          <h3>Read every line</h3>
+          <p>MIT license. Build it yourself with Xcode 15+ or the Swift 6 toolchain.</p>
+          <a class="cta ghost" href="https://github.com/luisroquette-labs/notchagent">View the repository</a>
+        </div>
+      </div>
+      <p class="req">macOS 14 or later · Apple silicon · Macs without a notch get a floating pill · Windows is a preview you build from source</p>
+    </div>
+  </section>
+
+  <section class="priv reveal" id="privacy">
+    <div class="wrap">
+      <p class="eyebrow">Privacy</p>
+      <h2>Local-first. No account. No telemetry.</h2>
+      <p class="lede">NotchAgent has no backend and no login of its own. Credentials stay in the macOS Keychain. Portal sessions use isolated WebKit profiles. Diagnostics strip credentials, identity, and amounts.</p>
+      <ul>
+        <li><b>No account.</b> Nothing to sign up for, and no contact form in front of the download.</li>
+        <li><b>No telemetry.</b> The app does not phone home with usage, crashes, or a device id.</li>
+        <li><b>Official quota reads.</b> Codex uses the local app server you already authenticated. The optional Claude probe is one token to Anthropic and can be turned off.</li>
+        <li><b>Open source.</b> MIT licensed. Read the code before you run it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="specs reveal faq" id="faq">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>Before you install.</h2>
+      <details open>
+        <summary>Is it free?</summary>
+        <p>Yes. The Mac App Store edition, the Homebrew cask, and the GitHub Release are free.</p>
+      </details>
+      <details>
+        <summary>Do I need an account?</summary>
+        <p>No NotchAgent account. It reads Claude Code and Codex data that is already on your Mac. API account monitoring is opt-in and stores credentials in the Keychain.</p>
+      </details>
+      <details>
+        <summary>Does it send telemetry?</summary>
+        <p>No. There is no analytics endpoint in the app. The only optional network call that spends a token is the Claude quota probe, and Settings can disable it.</p>
+      </details>
+      <details>
+        <summary>Are you affiliated with Anthropic or OpenAI?</summary>
+        <p>No. NotchAgent is not affiliated with, endorsed by, or sponsored by Anthropic or OpenAI. Claude, Claude Code, and Codex are their products. NotchAgent only reads the local signals those tools already write.</p>
+      </details>
+      <details>
+        <summary>What Mac do I need?</summary>
+        <p>macOS 14 or later on Apple silicon. On a display without a notch, the same gauge sits in a floating pill.</p>
+      </details>
+      <details>
+        <summary>App Store or direct download?</summary>
+        <p>The App Store build is sandboxed and updated by Apple. Homebrew and GitHub Releases are the notarized direct build, updated with Sparkle. Both are the same product.</p>
+      </details>
+      <details>
+        <summary>Does it work with the 5-hour limit removed?</summary>
+        <p>When Anthropic’s probe reports a weekly window and no 5-hour window, the card says there is no 5-hour session limit on that plan and the weekly window becomes the headline. It does not draw a 5-hour gauge for a limit that is gone.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="final reveal">
+    <div class="wrap">
+      <p class="eyebrow">Install</p>
+      <h2>Stop finding the limit by hitting it.</h2>
+      <p class="price">Free · macOS 14+ · no account · no telemetry</p>
+      <div class="ctas">
+        <a class="cta primary" href="https://apps.apple.com/us/app/notchagent/id6817046228">Download on the Mac App Store</a>
+        <a class="cta ghost" href="https://github.com/luisroquette-labs/notchagent/releases/download/v3.7.1/NotchAgent-3.7.1.dmg">Download the 3.7.1 DMG</a>
+      </div>
+      <p class="affiliate">Not affiliated with Anthropic or OpenAI.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>NotchAgent · MIT · not affiliated with Anthropic or OpenAI</span>
+    <nav aria-label="Footer">
+      <a href="https://github.com/luisroquette-labs/notchagent">GitHub</a>
+      <a href="https://github.com/luisroquette-labs/notchagent/releases/download/v3.7.1/NotchAgent-3.7.1.dmg">DMG 3.7.1</a>
+      <a href="https://apps.apple.com/us/app/notchagent/id6817046228">Mac App Store</a>
+      <a href="https://notchagent.app/privacy">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var segsWrap = document.getElementById("fuelSegs");
+  var pctEl = document.getElementById("fuelPct");
+  var count = 20;
+  for (var i = 0; i < count; i++) {
+    var segment = document.createElement("span");
+    segment.className = "seg";
+    segsWrap.appendChild(segment);
+  }
+  var segs = segsWrap.children;
+  function paint(portion) {
+    portion = Math.max(0, Math.min(1, portion));
+    var on = Math.round(portion * count);
+    for (var i = 0; i < count; i++) {
+      segs[i].className = "seg" + (i < on ? (portion < 0.16 ? " warn" : " on") : "");
+    }
+    pctEl.textContent = Math.round(portion * 100) + "%";
+  }
+  function updateFuel() {
+    var root = document.documentElement;
+    var max = root.scrollHeight - root.clientHeight;
+    paint(max > 0 ? 1 - (root.scrollTop / max) : 1);
+  }
+  window.addEventListener("scroll", updateFuel, { passive: true });
+  window.addEventListener("resize", updateFuel);
+  updateFuel();
+  if (!reduced && "IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>

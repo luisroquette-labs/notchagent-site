@@ -3,9 +3,6 @@ import { describe, it, expect } from 'vitest'
 
 const js = readFileSync(new URL('../public/script.js', import.meta.url), 'utf8')
 
-// Gate de lead (18/10/2026): nada abre sem antes colher o lead pelo formulário
-// do motor de forms da CF Gauss. Antes, querySelector('[data-download]') pegava
-// só o primeiro CTA; aqui garantimos que TODOS os CTAs são gateados.
 describe('CONTRATO: gate de lead no script', () => {
   it('escuta todos os [data-gate], não só o primeiro', () => {
     expect(js).toMatch(/querySelectorAll\('\[data-gate\]'\)/)

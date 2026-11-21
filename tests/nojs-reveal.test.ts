@@ -6,8 +6,6 @@ const CSS = 'public/styles.css'
 const html = existsSync(PAGE) ? readFileSync(PAGE, 'utf8') : ''
 const css = existsSync(CSS) ? readFileSync(CSS, 'utf8') : ''
 
-// A1: sem JavaScript, .reveal{opacity:0} esconderia 8 seções.
-// O público bloqueia JS — o fallback tem que estar no HTML, não no script.
 describe('REGRESSÃO A1: reveals visíveis sem JS', () => {
   it('a página esconde .reveal por padrão (design preservado)', () => {
     expect(css).toMatch(/\.reveal\{opacity:0/)

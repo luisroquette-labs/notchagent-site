@@ -51,7 +51,7 @@ const files = execFileSync('git', ['ls-files', '-z']).toString().split('\0').fil
 const failures = [];
 
 for (const file of files) {
-  if (file !== '.githooks/pre-push' && !/\.(?:ts|tsx|js|jsx|mjs|cjs|css|html|ya?ml|sh)$/.test(file)) continue;
+  if (file !== '.githooks/pre-push' && !/\.(?:ts|tsx|js|jsx|mjs|cjs|css|html|ya?ml|sh|py)$/.test(file)) continue;
   if (!fs.existsSync(file)) continue;
   const source = fs.readFileSync(file, 'utf8');
   const offsets = [];
@@ -78,20 +78,14 @@ for (const file of files) {
       if (/(?:[:]|^\s*-)\s*[|>][+-]?\s*(?:#.*)?$/.test(match[0])) scalarIndent = indent;
     }
   } else if (file.endsWith('.html')) {
-    const embedded = [];
-    for (const script of source.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)) {
-      const start = script.index + script[0].indexOf('>') + 1;
-      embedded.push([start, start + script[1].length]);
-      offsets.push(...scriptComments(script[1], file).map((pos) => start + pos));
-    }
-    for (const style of source.matchAll(/<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/gi)) {
-      const start = style.index + style[0].indexOf('>') + 1;
-      embedded.push([start, start + style[1].length]);
-      offsets.push(...cssComments(style[1]).map((pos) => start + pos));
-    }
-    for (const match of source.matchAll(/<!--[\s\S]*?-->/g)) {
-      if (!embedded.some(([start, end]) => match.index >= start && match.index < end)) offsets.push(match.index);
-    }
+    const parsed = JSON.parse(execFileSync('python3', ['scripts/html-regions.py', file]));
+    offsets.push(...parsed.comments);
+    for (const script of parsed.scripts) offsets.push(...scriptComments(script.source, file).map((pos) => script.offset + pos));
+    for (const style of parsed.styles) offsets.push(...cssComments(style.source).map((pos) => style.offset + pos));
+  } else if (file.endsWith('.py')) {
+    const code = "import io,json,sys,tokenize\ns=sys.stdin.read()\nprint(json.dumps([t.start[0] for t in tokenize.generate_tokens(io.StringIO(s).readline) if t.type==tokenize.COMMENT and not (t.start[0]==1 and t.string.startswith('#!'))]))";
+    const lines = JSON.parse(execFileSync('python3', ['-c', code], { input: source }));
+    for (const line of lines) offsets.push(source.split('\n').slice(0, line - 1).reduce((n, part) => n + part.length + 1, 0));
   } else if (file.endsWith('.sh') || file === '.githooks/pre-push') {
     for (const match of source.matchAll(/^[^\n]*$/gm)) {
       let quote = '';

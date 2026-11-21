@@ -3,8 +3,6 @@ import { describe, it, expect } from 'vitest'
 
 const html = readFileSync(new URL('../public/index.html', import.meta.url), 'utf8')
 
-// A2: vídeo de 39,5s em autoplay sem pausa viola WCAG 2.2.2 (nível A);
-// prefers-reduced-motion também precisa parar o movimento, não só o scroll.
 describe('REGRESSÃO A2: hero video pausável', () => {
   const heroVideo = html.match(/<video[^>]*id="hero-video"[^>]*>/i)?.[0] ?? ''
 

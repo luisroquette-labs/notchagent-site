@@ -19,7 +19,6 @@ img,video{max-width:100%;display:block}
 a{color:var(--lilac)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-/* ——— fuel gauge ——— */
 .fuel{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;background:rgba(26,21,36,.88);border:1px solid var(--line);border-radius:8px;padding:8px 12px;backdrop-filter:blur(6px)}
 .fuel .fuel-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
 .fuel .segments{display:flex;gap:2px}
@@ -28,7 +27,6 @@ a{color:var(--lilac)}
 .fuel .seg.warn{background:var(--lilac)}
 .fuel .fuel-pct{font-family:var(--font-mono);font-size:11px;color:var(--text);min-width:34px;text-align:right}
 
-/* ——— topbar ——— */
 .topbar{position:sticky;top:0;z-index:50;background:rgba(26,21,36,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
 .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
 .brand{display:flex;align-items:center;gap:10px}
@@ -38,8 +36,6 @@ a{color:var(--lilac)}
 .brand .fw{font-family:var(--font-mono);font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:2px 6px;letter-spacing:.08em}
 .topbar .buy{display:inline-block;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-decoration:none;color:var(--ink);background:var(--coral);border-radius:6px;padding:8px 14px;font-weight:500}
 .topbar .buy:hover{background:#FF7D6B}
-/* telas estreitas (< 420px): o badge duplica a versão da seção Baixar — some;
-   wordmark e botão encolhem para não sobrar overflow horizontal (iPhone SE) */
 @media (max-width:419px){
   .topbar .wrap{padding-top:10px;padding-bottom:10px}
   .brand .fw{display:none}
@@ -47,7 +43,6 @@ a{color:var(--lilac)}
   .topbar .buy{padding:7px 10px;font-size:11px}
 }
 
-/* ——— hero ——— */
 .hero{position:relative;border-bottom:1px solid var(--line)}
 .hero video{width:100%;height:auto;max-height:78vh;object-fit:cover;background:#000}
 .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,21,36,.25) 0%,rgba(26,21,36,.55) 55%,var(--ink) 100%)}
@@ -68,18 +63,15 @@ a{color:var(--lilac)}
 .specstrip span{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--dim);border:1px solid var(--line);border-radius:4px;padding:4px 10px;text-transform:uppercase}
 .ctas.mid{margin-top:36px;justify-content:center}
 
-/* ——— sections ——— */
 section{padding:96px 0;border-bottom:1px solid var(--line)}
 section .eyebrow{color:var(--coral)}
 section h2{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,4vw,42px);line-height:1.12;letter-spacing:-.01em;margin-bottom:18px;max-width:720px}
 section .lede{color:var(--muted);max-width:640px;font-size:17px}
 
-/* problema */
 .problema .split{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .gif-frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);box-shadow:0 24px 60px rgba(0,0,0,.45)}
 .gif-frame img{width:100%;height:auto}
 
-/* pilares */
 .pillars{background:var(--panel)}
 .pillar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
 .pillar{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:28px}
@@ -88,7 +80,6 @@ section .lede{color:var(--muted);max-width:640px;font-size:17px}
 .pillar p{color:var(--muted);font-size:15px}
 .pillar img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);margin-top:18px}
 
-/* como funciona */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px 0}
 .step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px}
 .step .n{font-family:var(--font-mono);font-size:11px;color:var(--coral);letter-spacing:.16em;margin-bottom:8px}
@@ -97,7 +88,6 @@ section .lede{color:var(--muted);max-width:640px;font-size:17px}
 .video-frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);box-shadow:0 24px 60px rgba(0,0,0,.45)}
 .video-frame img,.video-frame video{width:100%;height:auto}
 
-/* baixar */
 .baixar{background:var(--panel)}
 .dl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;text-align:left}
 .dl{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px}
@@ -107,7 +97,6 @@ section .lede{color:var(--muted);max-width:640px;font-size:17px}
 .dl .mono{font-family:var(--font-mono);font-size:12px;color:var(--text);background:var(--raised);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
 .dl .cta{text-align:center}
 .req{margin-top:26px;font-family:var(--font-mono);font-size:13px;color:var(--dim);text-align:center}
-/* Badge oficial da Mac App Store */
 .appstore-cta{display:inline-flex;line-height:0;text-decoration:none;border-radius:11px}
 .appstore-cta:focus-visible{outline:2px solid var(--coral);outline-offset:3px}
 .appstore-badge{height:54px;width:auto;display:block;transition:transform .15s ease,filter .15s ease}
@@ -120,14 +109,11 @@ section .lede{color:var(--muted);max-width:640px;font-size:17px}
 .store-why li{color:var(--muted);font-size:14px;line-height:1.5}
 .store-why b{color:var(--text)}
 .dl-grid.two{grid-template-columns:repeat(2,1fr);margin-top:48px}
-/* CTAs que viraram <button> (gate de lead): zerar o chrome do botão */
 button.appstore-cta{background:none;border:none;padding:0;font:inherit}
 button.appstore-cta,button.cta{cursor:pointer}
 button.cta{background:none;border:none;font:inherit}
-/* Formulário embarcado do motor de forms da CF Gauss (inline + modal) */
 .embed-form-wrap{margin-top:28px;max-width:440px}
 .cfgauss-form{width:100%;border:none;display:block;min-height:440px;background:transparent}
-/* Gate: modal que embarca o form da CF Gauss antes de abrir o download */
 .gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
 .gate[hidden]{display:none}
 .gate-backdrop{position:absolute;inset:0;background:rgba(10,8,14,.72);backdrop-filter:blur(4px)}
@@ -137,7 +123,6 @@ button.cta{background:none;border:none;font:inherit}
 .gate-title{font-family:var(--font-display);font-weight:700;font-size:20px;margin-bottom:6px}
 .gate-sub{color:var(--muted);font-size:14px;margin-bottom:16px}
 
-/* subscribe */
 #subscribe{background:var(--panel);text-align:center}
 #subscribe .wrap{max-width:640px}
 #subscribe form{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
@@ -150,26 +135,22 @@ button.cta{background:none;border:none;font:inherit}
 #subscribe button:hover{background:#FF7D6B}
 #subscribe-status{margin-top:14px;font-family:var(--font-mono);font-size:13px;color:var(--muted)}
 
-/* privacidade */
 .priv{background:var(--panel)}
 .priv ul{list-style:none;margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .priv li{font-family:var(--font-mono);font-size:13px;color:var(--muted);background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:16px}
 .priv li b{display:block;color:var(--text);font-weight:500;margin-bottom:4px}
 
-/* filmado */
 .film-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;text-align:left}
 .film-grid figure{margin:0}
 .film-grid video{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#000}
 .film-grid figcaption{margin-top:14px;font-size:14px;line-height:1.5;color:var(--muted)}
 .film-grid figcaption strong{display:block;margin-bottom:4px;font-size:15px;font-weight:600;color:var(--text)}
 
-/* specs */
 .specs table{width:100%;border-collapse:collapse;margin-top:32px;font-family:var(--font-mono);font-size:13px}
 .specs th,.specs td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}
 .specs th{color:var(--dim);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
 .specs tr:last-child th,.specs tr:last-child td{border-bottom:none}
 
-/* cta final */
 .final{background:var(--panel);text-align:center}
 .final h2{max-width:none}
 .final .price{font-family:var(--font-mono);color:var(--muted);font-size:14px;margin-bottom:26px}
@@ -182,7 +163,6 @@ footer a:hover{color:var(--text)}
 footer nav button.footer-link{color:var(--muted);text-decoration:none;background:none;border:none;padding:0;font:inherit;cursor:pointer}
 footer nav button.footer-link:hover{color:var(--text)}
 
-/* legal and support pages */
 .legal-page{min-height:calc(100vh - 150px);padding:72px 0 96px}
 .legal-copy{max-width:780px}
 .legal-copy h1{font-family:var(--font-display);font-size:clamp(34px,6vw,56px);line-height:1.05;margin-bottom:16px}
@@ -195,7 +175,6 @@ footer nav button.footer-link:hover{color:var(--text)}
 .legal-card{margin-top:28px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
 .legal-card a{overflow-wrap:anywhere}
 
-/* reveal */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 

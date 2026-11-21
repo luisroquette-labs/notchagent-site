@@ -3,8 +3,6 @@ export const config = { runtime: 'edge' }
 const FORMATOS = ['dmg', 'zip'] as const
 type Formato = (typeof FORMATOS)[number]
 
-// Pacotes de fonte chegam nomeados `v3.5.1.zip` / `v3.5.1.tar.gz` e nunca
-// são o binário do app — mesmo critério do api/downloads.ts.
 const FONTE = /^v[\d.]+\.(zip|tar\.gz)$/
 
 export function escolherAsset(
@@ -20,13 +18,9 @@ export function escolherAsset(
 
 const FALLBACK = 'https://github.com/luisroquette-labs/notchagent/releases/latest'
 
-// Cache na CDN: o asset de uma release não muda, e a API anônima do GitHub
-// limita a 60 req/h por IP compartilhado. stale-while-revalidate segura o
-// clique mesmo num pico de lançamento (mesmo padrão do api/downloads.ts).
 const CACHE = 'public, s-maxage=600, stale-while-revalidate=3600'
 
 export function redirectComCache(url: string): Response {
-  // Response.redirect() traz headers imutáveis — headers.set() lançaria 500.
   return new Response(null, {
     status: 302,
     headers: { Location: url, 'Cache-Control': CACHE },

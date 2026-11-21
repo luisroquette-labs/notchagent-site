@@ -42,7 +42,6 @@ gtag('config', 'G-VBME8D3TJP');
 </head>
 <body>
 
-<!-- Badge oficial reutilizável da Mac App Store (logo Apple + lockup pt-BR) -->
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
   <symbol id="appstore-badge-sym" viewBox="0 0 184 52">
     <rect x="1" y="1" width="182" height="50" rx="11" fill="#000"></rect>
@@ -284,9 +283,6 @@ gtag('config', 'G-VBME8D3TJP');
   </section>
 </main>
 
-<!-- Gate de lead: TODO download/App Store passa pelo formulário do motor de
-     forms da CF Gauss antes de abrir. O iframe só carrega quando o modal abre;
-     no sucesso (postMessage cfgauss-embed-form) navegamos pro destino. -->
 <div id="gate" class="gate" hidden>
   <div class="gate-backdrop" data-gate-close></div>
   <div class="gate-card" role="dialog" aria-modal="true" aria-label="Baixar o NotchAgent">
@@ -314,7 +310,6 @@ gtag('config', 'G-VBME8D3TJP');
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Fuel gauge: 20 segmentos, progresso de leitura = combustível */
   var segsWrap = document.getElementById('fuelSegs');
   var pctEl = document.getElementById('fuelPct');
   var SEGS = 20;
@@ -341,7 +336,6 @@ gtag('config', 'G-VBME8D3TJP');
   window.addEventListener('resize', updateFuel);
   updateFuel();
 
-  /* Reveals */
   if (!reduced && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -353,7 +347,6 @@ gtag('config', 'G-VBME8D3TJP');
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  /* Hero (WCAG 2.2.2): movimento >5s precisa de pausa; reduced-motion fica no poster */
   var heroVideo = document.getElementById('hero-video');
   var heroToggle = document.getElementById('hero-video-toggle');
   function setHeroPaused(paused) {

@@ -34,8 +34,6 @@ describe('escolherAsset', () => {
   })
 })
 
-// A6: a API anônima do GitHub (60 req/h por IP) não pode ser chamada a cada
-// clique no pico de lançamento — redirects precisam de cache na CDN.
 describe('redirectComCache', () => {
   it('redireciona 302 com Cache-Control para a CDN', () => {
     const res = redirectComCache('https://x')

@@ -33,9 +33,6 @@ describe('sumDownloads', () => {
     expect(sumDownloads([{ tag_name: 'vX', assets: [{ name: 'a.dmg' }] }])).toBe(0)
   })
 
-  // REGRESSÃO: o preview do Windows (tag windows-test-build-*, prerelease:true)
-  // não é o produto anunciado nesta página — contar seus downloads no total
-  // infla/mistura a métrica de um app que só existe pra macOS aqui.
   describe('REGRESSÃO: prerelease não entra no total', () => {
     it('ignora downloads de um prerelease (build de teste do Windows)', () => {
       const comPrerelease = [

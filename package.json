@@ -9,7 +9,9 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "preflight": "npm run typecheck && npm test",
+    "lint": "node scripts/lint-comments.cjs",
+    "preflight:ci": "npm run preflight",
+    "preflight": "npm run lint && npm run typecheck && npm test",
     "hooks:install": "sh scripts/install-hooks.sh",
     "prepare": "npm run hooks:install"
   },
